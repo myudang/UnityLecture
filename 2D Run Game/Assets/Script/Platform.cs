@@ -17,7 +17,7 @@ public class Platform : MonoBehaviour
     // OnTriggerEnter2D : Trigger와 충돌했다면
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 자기 자신을 파괴합니다.
-        Destroy(gameObject); 
+        // 큐에 반환합니다.
+        ObjectPoolManager.instance.InsertQueue(gameObject);
     }
 }
